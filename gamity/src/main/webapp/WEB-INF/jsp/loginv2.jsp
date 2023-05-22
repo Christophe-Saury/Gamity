@@ -221,7 +221,7 @@
                     <input type="checkbox" name="item" checked/>
                     <span class="text-checkbox">Remember me</span>
                 </label>
-                <p>forget password?</p>
+                <p>forget tesdt password?</p>
             </div>
 
             <br>
