@@ -225,7 +225,7 @@
             </div>
 
             <br>
-            <button type="submit">Login</button>
+            <button type="submit">Logintest</button>
         </form>
     </div>
 
