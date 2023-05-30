@@ -8,23 +8,8 @@
 <head>
     <title>Login Page</title>
     <link href="webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .Login-form{
-            width:400px;
-            height:230px;
-            background-color:#34568B;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .error-msg {
-            background-color: white;
-            color: red;
-        }
-    </style>
+    <link href="../css/register.css" rel="stylesheet">
+    
 </head>
 
 <body>
