@@ -21,11 +21,25 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @RequestMapping(value = "/errorPage", method = RequestMethod.GET)
+    public String errorPage(){
+        return "GameHostingRequestPage";
+    }
+
+    @RequestMapping(value = "/errorPage", method = RequestMethod.POST)
+    public String errorPage2(){
+        return"Homepage";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(){
 
-        return "loginv2";
+        return "LoginPage";
     }
+
+
+
+
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String welcomePage(ModelMap model, @RequestParam String userId, @RequestParam String password){
@@ -37,20 +51,20 @@ public class UserController {
             if(user.getRoleId()== Constants.ROLE_ADMIN){
                 List<User> usersList = userService.getAllUsers();
                 model.put("usersList", usersList);
-                return "admin";
+                return "GameSelectionPage";
             } else{
-                return "dashboard";
+                return "GameSelectionPage";
             }
         }
         model.put("errorMsg", "Please provide the correct userid and password");
-        return "loginv2";
+        return "LoginPage";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerPage(Model model){
         User user = new User();
         model.addAttribute("user", user);
-        return "register";
+        return "RegisterPagev2";
     }
 
 
@@ -60,11 +74,11 @@ public class UserController {
 
        if(count != 1){
            model.put("errorMsg", "Some issue occured with registration");
-           return "register";
+           return "RegisterPagev2";
        }
 
        model.put("successMsg", "User created successfully!");
-       return"loginv2";
+       return"LoginPage";
     }
 
 }
