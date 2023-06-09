@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f6448fe-3106-4d90-b4ba-24e2bd0e0a08" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gamity/src/main/java/com/example/gamity/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gamity/src/main/java/com/example/gamity/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/chris/Documents/GitHub/Gamity/gamity",
+    "last_opened_file_path": "C:/Users/chris/Documents/Coding/gamity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -36,7 +37,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GamityApplication">
     <configuration name="GamityApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="18" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -53,8 +54,10 @@
       </method>
     </configuration>
     <configuration name="GamityApplication" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.gamity.GamityApplication" />
-      <module name="gamity" />
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/corretto-18.0.2" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="main.java.com.example.gamity.GamityApplication" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gamity" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.gamity.*" />
@@ -85,6 +88,7 @@
       <updated>1685448847672</updated>
       <workItem from="1685448848822" duration="39000" />
       <workItem from="1685448903984" duration="540000" />
+      <workItem from="1686315497867" duration="155000" />
     </task>
     <servers />
   </component>

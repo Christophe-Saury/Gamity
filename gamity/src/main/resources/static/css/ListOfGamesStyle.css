@@ -1,0 +1,101 @@
+body {
+    background-color: #1d1d1d;
+    color: #cae9ea;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(to left, #000000, #1D1D1D, #3c4748, #208C8C);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home,.about,.ListOfGames,.contact{
+    color: #cae9ea;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #3c4748;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+
+}
+.home:hover,.about:hover,.ListOfGames:hover,.contact:hover{
+    background-color: #66CC66;
+
+    box-shadow: 0px 12px 24px 0px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar-link {
+    color: #cae9ea;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.navbar-right .navbar-button {
+    background-color: #208c8c;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.navbar-right .navbar-button:hover {
+    background-color: #70F570;
+}
+
+/* Game List */
+.game-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-list li {
+    margin-bottom: 10px;
+}
+
+.game-list li a {
+    color: #cae9ea;
+    text-decoration: none;
+}
+
+.game-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Sign In Message */
+.signin-message {
+    background-color: #70F570;
+    color: #000000;
+    padding: 10px;
+    margin-bottom: 20px;
+}

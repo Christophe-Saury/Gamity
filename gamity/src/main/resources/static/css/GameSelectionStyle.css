@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+    background-color: #1d1d1d;
+    font-family: "Open Sans", sans-serif;
+    color: #cae9ea;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, p {
+    margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(to left, #000000, #1D1D1D, #3c4748, #208C8C);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3c4748;
+    min-width: 160px;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #cae9ea;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Game Selection Content */
+.game-selection-container {
+    padding: 20px;
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.game-item {
+    background-color: #3c4748;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-image {
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 10px;
+}
+
+.game-item h2 {
+    color: #cae9ea;
+    margin-bottom: 10px;
+}
+
+.game-description {
+    margin-bottom: 10px;
+}
+
+.game-rating {
+    color: #cae9ea;
+    font-weight: bold;
+}
+
+.play-button {
+    background-color: #208c8c;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.play-button:hover {
+    background-color: #70F570;
+}
+
+/* Search Form */
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    background-color: #208c8c;
+    color: #000000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #70F570;
+}
+

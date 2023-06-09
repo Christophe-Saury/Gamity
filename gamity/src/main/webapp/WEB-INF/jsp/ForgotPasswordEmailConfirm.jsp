@@ -3,36 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Password Reset Email Sent</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #f2f2f2;
-            color: #333333;
-            font-family: Arial, sans-serif;
-        }
+    <link rel="stylesheet" href="/css/ForgotPswdEmailPageStyle.css">
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #337ab7;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
 <div class="container">
