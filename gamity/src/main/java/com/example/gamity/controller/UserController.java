@@ -26,11 +26,6 @@ public class UserController {
         return "AboutPagev2";
     }
 
-    @RequestMapping(value = "/bubble", method = RequestMethod.GET)
-    public String bubble() {
-        return "Bubble";
-    }
-
 
 
     // needs to be updated
@@ -102,7 +97,6 @@ public class UserController {
 
 
 
-
     // might be updated
     @RequestMapping(value = "/GameHostRequest", method = RequestMethod.GET)
     public String gameHostingRequestPage() {
@@ -117,25 +111,15 @@ public class UserController {
 
 
     // is good
-
-    @RequestMapping(value = "/Gamev2", method = RequestMethod.GET)
-    public String playGamePagev2() {
+    @RequestMapping(value = "/Game", method = RequestMethod.POST)
+    public String playGamePagev2(ModelMap model, @RequestParam String gameId) {
+        model.put("gameId", gameId);
         return "GamePlayPagev2";
     }
 
-    @RequestMapping(value = "/Gamev3", method = RequestMethod.GET)
-    public String playGamePagev3() {
-        return "ChessGame";
-    }
-
-    @RequestMapping(value = "/Gamev4", method = RequestMethod.GET)
-    public String playGamePagev4() {
-        return "ReversiGame";
-    }
-
-    @RequestMapping(value = "/Gamev5", method = RequestMethod.GET)
-    public String playGamePagev5() {
-        return "Checkersgame";
+    @RequestMapping(value = "/Game", method = RequestMethod.GET)
+    public String playGamePage() {
+        return "GamePlayPagev2";
     }
 
     @RequestMapping(value = "/GameRequest", method = RequestMethod.GET)
@@ -151,7 +135,7 @@ public class UserController {
 
     @RequestMapping(value = "/selectGame", method = RequestMethod.GET)
     public String gameSelection(){
-        return "GameSelectionPage";
+        return "GameSelectionPagev2";
     }
 
     @RequestMapping(value = "/selectGamev2", method = RequestMethod.GET)
@@ -166,17 +150,17 @@ public class UserController {
 
     @RequestMapping(value = "/Home", method = RequestMethod.GET)
     public String homePage(){
-        return "Homepage";
+        return "Homepagev2";
     }
 
     @RequestMapping(value = "/Home", method = RequestMethod.POST)
     public String homePage2(){
-        return "Homepage";
+        return "Homepagev2";
     }
 
     @RequestMapping(value = "/ListOfGames", method = RequestMethod.GET)
     public String gamesPage() {
-        return "ListOfGames";
+        return "ListOfGamesv2";
     }
 
     @RequestMapping(value = "/ListOfGamesv2", method = RequestMethod.GET)
@@ -199,9 +183,9 @@ public class UserController {
             if(user.getRoleId()== Constants.ROLE_ADMIN){
                 List<User> usersList = userService.getAllUsers();
                 model.put("usersList", usersList);
-                return "GameSelectionPage";
+                return "GameSelectionPagev2";
             } else{
-                return "GameSelectionPage";
+                return "GameSelectionPagev2";
             }
         }
         model.put("errorMsg", "Please provide the correct userid and password");

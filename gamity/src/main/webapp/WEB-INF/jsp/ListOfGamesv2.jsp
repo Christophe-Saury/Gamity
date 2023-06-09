@@ -26,14 +26,43 @@
 
     <h2>Game List</h2>
     <ul class="game-list">
-        <li><a href="#">Game 1</a></li>
-        <li><a href="#">Game 2</a></li>
-        <li><a href="#">Game 3</a></li>
-        <li><a href="#">Game 4</a></li>
-        <li><a href="#">Game 5</a></li>
+
     </ul>
 </div>
 
-<script src="script.js"></script>
+<script>
+    // Sample JSON input
+    var gamesData = [
+        { name: "Sudoku" },
+        { name: "Tic Tac Toe" },
+        { name: "Bubble" },
+        { name: "Chess" }
+        // Add more game objects as needed
+    ];
+
+    // Function to dynamically create game list items
+    function createGameListItem(game) {
+        var gameListItem = document.createElement("li");
+        var gameLink = document.createElement("a");
+        gameLink.href = "#";
+        gameLink.textContent = game.name;
+        gameListItem.appendChild(gameLink);
+        return gameListItem;
+    }
+
+    // Function to populate game list
+    function populateGameList() {
+        var gameListContainer = document.querySelector(".game-list");
+
+        gamesData.forEach(function(game) {
+            var gameListItem = createGameListItem(game);
+            gameListContainer.appendChild(gameListItem);
+        });
+    }
+
+    // Call the function to populate game list
+    populateGameList();
+
+</script>
 </body>
 </html>
