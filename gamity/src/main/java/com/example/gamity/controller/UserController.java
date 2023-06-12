@@ -124,7 +124,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String welcomePage(ModelMap model, @RequestParam String userId, @RequestParam String password){
+    public String welcomePage(ModelMap model, @RequestParam String userId, @RequestParam String password) throws JsonProcessingException {
         System.out.println("Connecting database...");
         User user = userService.getUserByUserId(userId);
 
@@ -133,8 +133,16 @@ public class UserController {
             if(user.getRoleId()== Constants.ROLE_ADMIN){
                 List<User> usersList = userService.getAllUsers();
                 model.put("usersList", usersList);
+                List<Game> games = gameService.getAllGames(); // Retrieve all games
+                ObjectMapper objectMapper = new ObjectMapper();
+                String jsonData = objectMapper.writeValueAsString(games);
+                model.put("games", jsonData); // Add the games to the model
                 return "GameSelectionPage";
             } else{
+                List<Game> games = gameService.getAllGames(); // Retrieve all games
+                ObjectMapper objectMapper = new ObjectMapper();
+                String jsonData = objectMapper.writeValueAsString(games);
+                model.put("games", jsonData); // Add the games to the model
                 return "GameSelectionPage";
             }
         }

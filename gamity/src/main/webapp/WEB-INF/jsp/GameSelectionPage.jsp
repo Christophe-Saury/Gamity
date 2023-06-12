@@ -12,15 +12,15 @@
         <div class="dropdown">
             <button class="dropdown-button">Categories</button>
             <div class="dropdown-content">
-                <form action="/selectGame" method="post">
+                <form action="/GameCategories" method="post">
                     <input type="hidden" name="idCategory" value="1">
                     <button type="submit" class="category-button">Board games</button>
                 </form>
-                <form action="/selectGame" method="post">
+                <form action="/GameCategories" method="post">
                     <input type="hidden" name="idCategory" value="2">
                     <button type="submit" class="category-button">2D Games</button>
                 </form>
-                <form action="/selectGame" method="post">
+                <form action="/GameCategories" method="post">
                     <input type="hidden" name="idCategory" value="3">
                     <button type="submit" class="category-button">3D games</button>
                 </form>
