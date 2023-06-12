@@ -3,112 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* General Styles */
-        body {
-            background-color: #1d1d1d;
-            color: #cae9ea;
-            font-family: "Open Sans", sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: #3c4748;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-left {
-            display: flex;
-        }
-
-        .navbar-link {
-            color: #cae9ea;
-            text-decoration: none;
-            margin-right: 20px;
-        }
-
-        .navbar-right .navbar-button {
-            background-color: #208c8c;
-            color: #000000;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .navbar-right .navbar-button:hover {
-            background-color: #70F570;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            text-align: left;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #cae9ea;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        input[type="submit"] {
-            background-color: #208c8c;
-            color: #000000;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #70F570;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/css/ContactPageStyle.css">
 </head>
 <body>
 <!-- Navigation Bar -->
 <nav class="navbar">
     <div class="navbar-left">
-        <a href="/Home" class="navbar-link">Home</a>
-        <a href="/about" class="navbar-link">About</a>
-        <a href="/ListOfGames" class="navbar-link">Games</a>
-        <a href="/contact" class="navbar-link">Contact</a>
+    <div class="home" ><a href="/Home" class="navbar-link">Home</a></div>   
+    <div class="about" >    <a href="/about" class="navbar-link">About</a></div>
+      <div class="ListOfGames" >  <a href="/ListOfGames" class="navbar-link">Games</a></div>
+      <div class="contact" >  <a href="/contact" class="navbar-link">Contact</a></div>
     </div>
     <div class="navbar-right">
         <a href="/login" class="navbar-button">Login</a>

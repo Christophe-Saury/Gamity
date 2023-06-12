@@ -1,105 +1,62 @@
-<%@ page language="java" contentType="text/html"%>
-<%@ page import="java.text.*,java.util.*" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
-
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
-    <link href="webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .Login-form{
-            width:400px;
-            height:230px;
-            background-color:#34568B;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .error-msg {
-            background-color: white;
-            color: red;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Login Page in HTML with CSS Code Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/RegisterStyle.css">
 </head>
-
 <body>
 
-<div class="Login-form">
+<div class="box-form">
 
-    <c:if test="${not empty errorMsg}">
-        <div class="alert alert-danger" role="alert">${errorMsg}</div>
-    </c:if>
+    <div class="left">
+        <div class="overlay">
+            <h1> GAMITY </h1>
+            <a href="/login" class="back-to-login">Back to login</a>
+        </div>
+    </div>
+    <div class="right">
+        <h2>REGISTER</h2>
+        <p>WELCOME TO GAMITY! YOUR OWN PERSONALISED GAMING SITE</p>
+        <p>RELIVE YOUR CHILDHOOD WITH US</p>
 
 
-    <div class="container-fluid">
-        <form:form method="post" modelAttribute="user">
-            <div class="mt-3">
-                <form:input type="text" path="userId" class="form-control mt-3"
+        <div class="inputs">
+            <c:if test="${not empty errorMsg}">
+                <div class="alert alert-danger" role="alert">${errorMsg}</div>
+            </c:if>
+            <c:if test="${not empty successMsg}">
+                <div class="alert alert-success" role="alert">${successMsg}</div>
+            </c:if>
+
+            <form:form method="post" modelAttribute="user">
+
+                <form:input type="text" id="username" path="userId" class="form-control mt-3"
                             placeholder="User ID"/>
-            </div>
-            <div class="mt-3">
+                <span id="username-error" class="error-message"></span>
+                <br>
                 <form:input type="password" path="password" class="form-control mt-3"
                             placeholder="Password" />
-            </div>
+                <label class="checkbox-label">
+                <input type="checkbox" class="show-password-checkbox" onclick="togglePasswordVisibility('password')">
+                Show Password
+                </label>
+                <span id="password-error" class="error-message"></span>
+                <br>
 
-            <form:button type="submit" class="btn btn-dark btn-block mt-3">Register</form:button>
+        </div>
+        <br><br>
 
+        <br>
+                <form:button type="submit" id="register-button" class="btn btn-dark btn-block mt-3">Register</form:button>
         </form:form>
-
-
     </div>
 </div>
-
-<script src="webjars/jquery/3.6.3/jquery.min.js"></script>
-<script src="webjars/bootstrap/5.2.3/js/boostrap.min.js"></script>
-
-</body>
-</html>
-
-
-<!--
-<html>
-<head>
-<title>Login Page</title>
-<link href="webjars/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
-<style>
-.Login-form{
-width:400px;
-height:200px;
-background-color:#34568B;
-position: absolute;
-top: 50%;
-left: 50%;
-margin-right: -50%;
-transform: translate(-50%, -50%);
-}
-</style>
-</head>
-
-<body>
-<h2></h2>
-<div class="Login-form">
-<div class="container-fluid">
-<form method="post">
-<div class="mt-3">
-<input type="text" name="userId" placeholder="User ID"/>
-</div>
-<div class="mt-3">
-<input type="password" name="password" placeholder="Password">
-</div>
-<button type="submit" class="btn btn-dark btn-block mt-3">Login</button>
-</form>
-</div>
-</div>
-
-<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-<script src="webjars/bootstrap/4.6.0/js/boostrap.min.js"></script>
-
+<script src="/js/RegisterPage.js">
+</script>
 </body>
 </html>

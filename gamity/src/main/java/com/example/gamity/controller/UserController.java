@@ -3,10 +3,12 @@ package com.example.gamity.controller;
 import com.example.gamity.constants.Constants;
 import com.example.gamity.controller.bean.Category;
 import com.example.gamity.controller.bean.Game;
+import com.example.gamity.controller.bean.Rating;
 import com.example.gamity.controller.bean.User;
 import com.example.gamity.dao.GameDao;
 import com.example.gamity.service.CategoryService;
 import com.example.gamity.service.GameService;
+import com.example.gamity.service.RatingService;
 import com.example.gamity.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,39 +31,21 @@ public class UserController {
     UserService userService;
     @Autowired
     GameService gameService;
-
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    RatingService ratingService;
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public String aboutPage() {
-        return "AboutPagev2";
+        return "AboutPage";
     }
 
 
-
-    // needs to be updated
-    @RequestMapping(value = "/chat", method = RequestMethod.GET)
-    public String chatPage() {
-        return "chatPage";
-    }
-
-    @RequestMapping(value = "/chatv2", method = RequestMethod.GET)
-    public String chatPagev2() {
-        return "chatPagev2";
-    }
-
-
-
-
-
-    // is good
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
-    public String contactPagev2() {
-        return "ContactPagev2";
+    public String contactPage() {
+        return "ContactPage";
     }
-
-
 
     // Will probably be updated
     @RequestMapping(value = "/errorPage", method = RequestMethod.GET)
@@ -69,42 +53,14 @@ public class UserController {
         return "ErrorPage";
     }
 
-    @RequestMapping(value = "/errorPagev2", method = RequestMethod.GET)
-    public String errorPagev2(){
-        return "ErrorPagev2";
-    }
-
     @RequestMapping(value = "/forgot", method = RequestMethod.GET)
     public String forgotPage(){
         return "ForgotPasswordEmailConfirm";
     }
 
-    @RequestMapping(value = "/forgotv2", method = RequestMethod.GET)
-    public String forgotPagev2(){
-        return "ForgotPasswordEmailConfirmv2";
-    }
-
     @RequestMapping(value = "/forgotOg", method = RequestMethod.GET)
     public String forgotPageOg(){
         return "ForgotPasswordPage";
-    }
-
-    @RequestMapping(value = "/forgotOgv2", method = RequestMethod.GET)
-    public String forgotPageOgv2(){
-        return "ForgotPasswordPagev2";
-    }
-
-
-
-    // needs to be updated
-    @RequestMapping(value = "/GameCategories", method = RequestMethod.GET)
-    public String gameCategoriesv0() {
-        return "GameCategories";
-    }
-
-    @RequestMapping(value = "/GameCategoriesv2", method = RequestMethod.GET)
-    public String gameCategoriesv2() {
-        return "GameCategoriesv2";
     }
 
     @RequestMapping(value = "/GameCategories", method = RequestMethod.POST)
@@ -124,27 +80,13 @@ public class UserController {
         return "GameHostingRequestPage";
     }
 
-    @RequestMapping(value = "/GameHostRequestv2", method = RequestMethod.GET)
-    public String gameHostingRequestPagev2() {
-        return "GameHostingRequestPagev2";
-    }
-
-
-
-    // is good
     @RequestMapping(value = "/Game", method = RequestMethod.POST)
-    public String playGamePagev2(ModelMap model, @RequestParam long gameId) {
+    public String playGamePagePost(ModelMap model, @RequestParam long gameId) {
         Game game = gameService.getGameById(gameId);
         model.put("gameCode", game.getCode());
         model.put("gameDescription", game.getDescription());
         model.put("gameRating", game.getRating());
-
-        return "GamePlayPagev2";
-    }
-
-    @RequestMapping(value = "/Game", method = RequestMethod.GET)
-    public String playGamePage() {
-        return "GamePlayPagev2";
+        return "GamePlayPage";
     }
 
     @RequestMapping(value = "/GameRequest", method = RequestMethod.GET)
@@ -152,53 +94,28 @@ public class UserController {
         return "GameRequestPage";
     }
 
-    @RequestMapping(value = "/GameRequestv2", method = RequestMethod.GET)
-    public String gameRequestPagev2() {
-        return "GameRequestPagev2";
-    }
-
-
     @RequestMapping(value = "/selectGame", method = RequestMethod.GET)
-    public String gameSelection(){
-        return "GameSelectionPagev2";
-    }
-
-
-    @RequestMapping(value = "/selectGamev2", method = RequestMethod.GET)
-    public String gameSelectionv2(ModelMap model) throws JsonProcessingException {
+    public String gameSelection(ModelMap model) throws JsonProcessingException {
         List<Game> games = gameService.getAllGames(); // Retrieve all games
-
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonData = objectMapper.writeValueAsString(games);
         model.put("games", jsonData); // Add the games to the model
-        return "GameSelectionPagev2";
+        return "GameSelectionPage";
     }
 
-
-
-    @RequestMapping(value = "/Homev2", method = RequestMethod.GET)
+    @RequestMapping(value = "/Home", method = RequestMethod.GET)
     public String homePagev2(){
         return "Homepage";
     }
 
-    @RequestMapping(value = "/Home", method = RequestMethod.GET)
-    public String homePage(){
-        return "Homepagev2";
-    }
-
     @RequestMapping(value = "/Home", method = RequestMethod.POST)
     public String homePage2(){
-        return "Homepagev2";
+        return "Homepage";
     }
 
     @RequestMapping(value = "/ListOfGames", method = RequestMethod.GET)
     public String gamesPage() {
-        return "ListOfGamesv2";
-    }
-
-    @RequestMapping(value = "/ListOfGamesv2", method = RequestMethod.GET)
-    public String gamesPagev2() {
-        return "ListOfGamesv2";
+        return "ListOfGames";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -216,9 +133,9 @@ public class UserController {
             if(user.getRoleId()== Constants.ROLE_ADMIN){
                 List<User> usersList = userService.getAllUsers();
                 model.put("usersList", usersList);
-                return "GameSelectionPagev2";
+                return "GameSelectionPage";
             } else{
-                return "GameSelectionPagev2";
+                return "GameSelectionPage";
             }
         }
         model.put("errorMsg", "Please provide the correct userid and password");
@@ -229,54 +146,24 @@ public class UserController {
     public String registerPage(Model model){
         User user = new User();
         model.addAttribute("user", user);
-        return "RegisterPagev2";
+        return "RegisterPage";
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registerPage(@ModelAttribute("user") User user, ModelMap model){
         int count = userService.createNewUser(user);
-
-        if(count != 1){
-            model.put("errorMsg", "Some issue occured with registration");
-            return "RegisterPagev2";
-        }
-
-        model.put("successMsg", "User created successfully!");
-        return"LoginPage";
-    }
-
-    @RequestMapping(value = "/registerv2", method = RequestMethod.GET)
-    public String registerPagev2(Model model){
-        User user = new User();
-        model.addAttribute("user", user);
-        return "RegisterPage";
-    }
-
-    @RequestMapping(value = "/registerv2", method = RequestMethod.POST)
-    public String registerPagev2(@ModelAttribute("user") User user, ModelMap model){
-        int count = userService.createNewUser(user);
-
         if(count != 1){
             model.put("errorMsg", "Some issue occured with registration");
             return "RegisterPage";
         }
-
         model.put("successMsg", "User created successfully!");
-        return"LoginPage";
+        return"RegisterPage";
     }
 
-
-
-    // is good
+    // needs updating
     @RequestMapping(value = "/Dashboard", method = RequestMethod.GET)
     public String userDashboard() {
         return "UserDashboard";
     }
-
-
-
-
-
-
 
 }
