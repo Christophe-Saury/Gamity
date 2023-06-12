@@ -34,7 +34,7 @@ body {
     color: #000000;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(Image.jpg);
+    background-image: url(../img/Image.jpg);
     overflow: hidden;
 }
 .box-form .left .overlay {

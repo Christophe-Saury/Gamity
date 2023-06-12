@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,97 +25,34 @@
 
 
         <div class="inputs">
+            <c:if test="${not empty errorMsg}">
+                <div class="alert alert-danger" role="alert">${errorMsg}</div>
+            </c:if>
 
-            <input type="text" id="username" placeholder="Username">
-            <span id="username-error" class="error-message"></span>
-            <br>
-            <input type="password" id="password" placeholder="Password">
-            <label class="checkbox-label">
+            <form:form method="post" modelAttribute="user">
+
+                <form:input type="text" id="username" path="userId" class="form-control mt-3"
+                            placeholder="User ID"/>
+                <span id="username-error" class="error-message"></span>
+                <br>
+                <form:input type="password" path="password" class="form-control mt-3"
+                            placeholder="Password" />
+                <label class="checkbox-label">
                 <input type="checkbox" class="show-password-checkbox" onclick="togglePasswordVisibility('password')">
                 Show Password
-            </label>
-            <span id="password-error" class="error-message"></span>
-            <br>
-            <input type="password" id="confirmpassword" placeholder="Confirm password">
-            <label class="checkbox-label">
-                <input type="checkbox" class="show-password-checkbox" onclick="togglePasswordVisibility('confirmpassword')">
-                Show Password
-            </label>
-            <span id="confirmpassword-error" class="error-message"></span>
-            <p>
-                Passwords should be at least
-            <ul>
-                <li><i>8</i> characters long and max <i>12</i>.</li>
-                <li>Contain <strong>lower case letters [a-z]</strong> and <strong>uppercase letters [A-Z]</strong>.</li>
-                <li>Contain <strong>numbers [0-9]</strong> and <strong>symbols [@,$,#]</strong>.</li>
-            </ul>
-            </p>
+                </label>
+                <span id="password-error" class="error-message"></span>
+                <br>
+
         </div>
         <br><br>
 
         <br>
-        <button id="register-button">Register</button>
+                <form:button type="submit" id="register-button" class="btn btn-dark btn-block mt-3">Register</form:button>
+        </form:form>
     </div>
 </div>
-<script>
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const passwordConfirmInput = document.getElementById("confirmpassword");
-    const submitButton = document.getElementById("register-button");
-
-    function togglePasswordVisibility(inputId) {
-        const input = document.getElementById(inputId);
-        input.type = input.type === "password" ? "text" : "password";
-    }
-
-    function validatePassword() {
-        const username = usernameInput.value;
-        const password = passwordInput.value;
-        const confirmPassword = passwordConfirmInput.value;
-
-        // Reset previous error messages
-        document.getElementById("username-error").textContent = "";
-        document.getElementById("password-error").textContent = "";
-        document.getElementById("confirmpassword-error").textContent = "";
-
-        if (username.trim() === "") {
-            document.getElementById("username-error").textContent = "Username is required";
-            return false;
-        }
-
-        if (password.length < 8) {
-            document.getElementById("password-error").textContent = "Password must be at least 8 characters long";
-            return false;
-        }
-        if (!/[a-z]/.test(password)) {
-            document.getElementById("password-error").textContent = "Password must contain at least one lowercase letter";
-            return false;
-        }
-        if (!/[A-Z]/.test(password)) {
-            document.getElementById("password-error").textContent = "Password must contain at least one uppercase letter";
-            return false;
-        }
-        if (!/\d/.test(password)) {
-            document.getElementById("password-error").textContent = "Password must contain at least one digit";
-            return false;
-        }
-        if (!/[@$#]/.test(password)) {
-            document.getElementById("password-error").textContent = "Password must contain at least one special character (@, $, #)";
-            return false;
-        }
-        if (password !== confirmPassword) {
-            document.getElementById("confirmpassword-error").textContent = "Confirm password does not match with the password";
-            return false;
-        }
-
-        return true;
-    }
-
-    submitButton.addEventListener("click", (event) => {
-        if (!validatePassword()) {
-            event.preventDefault();
-        }
-    });
+<script src="/js/RegisterPage.js">
 </script>
 </body>
 </html>

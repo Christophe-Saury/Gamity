@@ -1,8 +1,15 @@
 package com.example.gamity.controller;
 
 import com.example.gamity.constants.Constants;
+import com.example.gamity.controller.bean.Category;
+import com.example.gamity.controller.bean.Game;
 import com.example.gamity.controller.bean.User;
+import com.example.gamity.dao.GameDao;
+import com.example.gamity.service.CategoryService;
+import com.example.gamity.service.GameService;
 import com.example.gamity.service.UserService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +27,11 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    GameService gameService;
+
+    @Autowired
+    CategoryService categoryService;
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
     public String aboutPage() {
@@ -44,7 +56,7 @@ public class UserController {
 
 
     // is good
-    @RequestMapping(value = "/contactv2", method = RequestMethod.GET)
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String contactPagev2() {
         return "ContactPagev2";
     }
@@ -86,7 +98,7 @@ public class UserController {
 
     // needs to be updated
     @RequestMapping(value = "/GameCategories", method = RequestMethod.GET)
-    public String gameCategories() {
+    public String gameCategoriesv0() {
         return "GameCategories";
     }
 
@@ -95,7 +107,16 @@ public class UserController {
         return "GameCategoriesv2";
     }
 
-
+    @RequestMapping(value = "/GameCategories", method = RequestMethod.POST)
+    public String gameCategories(ModelMap model, @RequestParam long idCategory) throws JsonProcessingException {
+        Category category = categoryService.getCategory(idCategory);
+        model.put("categoryName", category.getNameCategory());
+        List<Game> games = gameService.getAllGamesByCategory(idCategory); // Retrieve all games
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonData = objectMapper.writeValueAsString(games);
+        model.put("games", jsonData); // Add the games to the model
+        return "GameCategories";
+    }
 
     // might be updated
     @RequestMapping(value = "/GameHostRequest", method = RequestMethod.GET)
@@ -112,8 +133,12 @@ public class UserController {
 
     // is good
     @RequestMapping(value = "/Game", method = RequestMethod.POST)
-    public String playGamePagev2(ModelMap model, @RequestParam String gameId) {
-        model.put("gameId", gameId);
+    public String playGamePagev2(ModelMap model, @RequestParam long gameId) {
+        Game game = gameService.getGameById(gameId);
+        model.put("gameCode", game.getCode());
+        model.put("gameDescription", game.getDescription());
+        model.put("gameRating", game.getRating());
+
         return "GamePlayPagev2";
     }
 
@@ -138,14 +163,22 @@ public class UserController {
         return "GameSelectionPagev2";
     }
 
+
     @RequestMapping(value = "/selectGamev2", method = RequestMethod.GET)
-    public String gameSelectionv2(){
+    public String gameSelectionv2(ModelMap model) throws JsonProcessingException {
+        List<Game> games = gameService.getAllGames(); // Retrieve all games
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonData = objectMapper.writeValueAsString(games);
+        model.put("games", jsonData); // Add the games to the model
         return "GameSelectionPagev2";
     }
 
+
+
     @RequestMapping(value = "/Homev2", method = RequestMethod.GET)
     public String homePagev2(){
-        return "Homepagev2";
+        return "Homepage";
     }
 
     @RequestMapping(value = "/Home", method = RequestMethod.GET)

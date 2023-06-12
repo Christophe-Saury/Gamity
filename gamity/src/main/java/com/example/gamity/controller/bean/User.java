@@ -8,6 +8,8 @@ public class User {
 
     private long roleId;
 
+
+
     public String getUserId(){
         return userId;
     }

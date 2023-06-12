@@ -42,7 +42,6 @@
     </div>
 </div>
 
-<script src="/js/Homepage.js">
-</script>
+<script src="/js/Homepage.js"></script>
 </body>
 </html>

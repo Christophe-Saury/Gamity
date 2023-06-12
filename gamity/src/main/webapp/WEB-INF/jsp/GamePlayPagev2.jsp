@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@
         <div id="game-interface">
 
             <div id="game-content">
-
+                ${gameCode}
             </div>
 
         </div>
@@ -38,10 +39,10 @@
         <div class="game-details">
             <div class="description">
                 <h2>Description</h2>
-                <p></p>
+                <p>${gameDescription}</p>
             </div>
             <div class="rules">
-                <h2>Rules</h2>
+                <h2></h2>
                 <ul></ul>
             </div>
         </div>
@@ -56,17 +57,13 @@
             <button class="rating-button">4</button>
             <button class="rating-button">5</button>
         </div>
+        <h2>Current Rating : ${gameRating}</h2>
     </div>
 
 </div>
 
-<div class="ad-column">
-    <img src="ad2.jpg" alt="Ad 2">
-    <!-- Add more ad images or content as needed -->
-</div>
 
 
-<script src="/js/GamePlayPage.js"></script>
 
 </body>
 </html>

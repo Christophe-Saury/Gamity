@@ -5,14 +5,14 @@ var gamesData = [
         name: "Game 3",
         description: "Description of Game 3",
         rating: "3.8",
-        gameId: 3
+        gameId: 1
     },
     {
         image: "game_image.jpg",
         name: "Game 4",
         description: "Description of Game 4",
         rating: "4.2",
-        gameId: 4
+        gameId: 2
     },
     // Add more game objects as needed
 ];
