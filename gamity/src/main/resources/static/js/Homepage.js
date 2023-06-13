@@ -1,12 +1,14 @@
 // Sample JSON input
 var gamesData = [
     {
-        name: "Tic Tac Toe",
-        image: "game1.jpg"
+        name: "Driving Simulator",
+        image: "game1.jpg",
+        rating: 5
     },
     {
         name: "Chess",
-        image: "game2.jpg"
+        image: "game2.jpg",
+        rating: 5
     },
     // Add more game objects as needed
 ];
@@ -15,16 +17,19 @@ var gamesData = [
 function createGameItem(game) {
     var gameItem = document.createElement("div");
     gameItem.classList.add("game-item");
-
+/*
     var gameImage = document.createElement("img");
     gameImage.src = game.image;
-    gameImage.alt = game.name;
+    gameImage.alt = game.name;*/
 
     var gameTitle = document.createElement("h3");
     gameTitle.textContent = game.name;
+    var gameRating = document.createElement("h3");
+    gameRating.textContent = "Rating : " + game.rating;
 
-    gameItem.appendChild(gameImage);
+   // gameItem.appendChild(gameImage);
     gameItem.appendChild(gameTitle);
+    gameItem.appendChild(gameRating);
 
     return gameItem;
 }

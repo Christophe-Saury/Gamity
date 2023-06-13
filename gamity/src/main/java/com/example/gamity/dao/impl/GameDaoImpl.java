@@ -58,7 +58,7 @@ public class GameDaoImpl extends JdbcDaoSupport implements GameDao {
 
     @Override
     public List<Game> getAllGames(){
-        String sql = "select game_id, name, description, rating from game;";
+        String sql = "select game_id, name, description, rating, image from game;";
 
         return getJdbcTemplate().query(sql, new RowMapper<Game>() {
             @Override
@@ -68,6 +68,7 @@ public class GameDaoImpl extends JdbcDaoSupport implements GameDao {
                 game.setGameName(rs.getString(2));
                 game.setDescription(rs.getString(3));
                 game.setRating(rs.getLong(4));
+                game.setImage(rs.getString(5));
                 return game;
             }
         });
@@ -75,7 +76,7 @@ public class GameDaoImpl extends JdbcDaoSupport implements GameDao {
 
     @Override
     public List<Game> getAllGamesByCategory(long categoryId){
-        String sql = "select game_id, name, description, rating from game where category=?;";
+        String sql = "select game_id, name, description, rating, image from game where category=?;";
 
         return getJdbcTemplate().query(sql, new Object[]{categoryId}, new RowMapper<Game>() {
             @Override
@@ -85,10 +86,25 @@ public class GameDaoImpl extends JdbcDaoSupport implements GameDao {
                 game.setGameName(rs.getString(2));
                 game.setDescription(rs.getString(3));
                 game.setRating(rs.getLong(4));
+                game.setImage(rs.getString(5));
                 return game;
             }
         });
     }
 
+
+    @Override
+    public List<Game> getAllGamesName(){
+        String sql = "select name from game;";
+
+        return getJdbcTemplate().query(sql, new RowMapper<Game>() {
+            @Override
+            public Game mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Game game = new Game();
+                game.setGameName(rs.getString(1));
+                return game;
+            }
+        });
+    }
 
 }

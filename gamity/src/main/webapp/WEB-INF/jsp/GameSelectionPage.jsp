@@ -57,7 +57,7 @@
 
         var gameImage = document.createElement("div");
         gameImage.classList.add("game-image");
-        gameImage.style.backgroundImage = `url('${game.image}')`;
+        gameImage.style.backgroundImage = "url('"+game.image+"')";
         gameItem.appendChild(gameImage);
 
         var gameTitle = document.createElement("h2");

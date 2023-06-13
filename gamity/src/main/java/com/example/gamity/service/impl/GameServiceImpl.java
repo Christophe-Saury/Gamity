@@ -31,4 +31,9 @@ public class GameServiceImpl implements GameService {
     public List<Game> getAllGamesByCategory(long categoryId){
         return gameDao.getAllGamesByCategory(categoryId);
     }
+
+    @Override
+    public List<Game> getAllGamesName(){
+        return gameDao.getAllGamesName();
+    }
 }

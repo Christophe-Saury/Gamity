@@ -10,4 +10,6 @@ public interface GameDao {
     List<Game> getAllGames();
 
     List<Game> getAllGamesByCategory(long categoryId);
+
+    List<Game> getAllGamesName();
 }

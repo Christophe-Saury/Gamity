@@ -1,9 +1,9 @@
 // Sample JSON input
 var gamesData = [
-    { name: "Sudoku" },
-    { name: "Tic Tac Toe" },
-    { name: "Bubble" },
-    { name: "Chess" }
+    { name: "Chess" },
+    { name: "Checkers" },
+    { name: "GoodGameEmpire" },
+    { name: "Reversi" }
     // Add more game objects as needed
 ];
 

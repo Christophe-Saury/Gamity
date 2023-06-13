@@ -12,7 +12,16 @@ public class Game {
     private String rules;
     private long rating;
 
+    private String image;
 
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     public long getIdgame() {
         return idgame;
     }
@@ -77,5 +86,6 @@ public class Game {
                 ", rating=" + rating +  '\'' +
                 '}';
     }
+
 
 }

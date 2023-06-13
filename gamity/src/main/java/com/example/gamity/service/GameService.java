@@ -11,4 +11,6 @@ public interface GameService {
 
     List<Game> getAllGamesByCategory(long categoryId);
 
+    List<Game> getAllGamesName();
+
 }

@@ -12,6 +12,7 @@ import com.example.gamity.service.RatingService;
 import com.example.gamity.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mysql.cj.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -114,7 +115,20 @@ public class UserController {
     }
 
     @RequestMapping(value = "/ListOfGames", method = RequestMethod.GET)
-    public String gamesPage() {
+    public String gamesPage(ModelMap model) throws JsonProcessingException {
+
+
+        List<Game> games = gameService.getAllGamesName(); // Retrieve all games' names
+
+        String jsonData= "[";
+        for(int i = 0; i<games.size(); i++){
+           jsonData+= "\n{ name: \""+games.get(i).getGameName() +"\" },";
+        }
+        jsonData.substring(0, jsonData.length()-2);
+        jsonData+= "]";
+        model.put("games", jsonData); // Add the games to the model
+
+
         return "ListOfGames";
     }
 
