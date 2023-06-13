@@ -13,6 +13,7 @@
     <div class="about" >    <a href="/about" class="navbar-link">About</a></div>
       <div class="ListOfGames" >  <a href="/ListOfGames" class="navbar-link">Games</a></div>
       <div class="contact" >  <a href="/contact" class="navbar-link">Contact</a></div>
+        <div class="contact" >  <a href="/GameHostRequest" class="navbar-link">Host your game</a></div>
     </div>
     <div class="navbar-right">
         <a href="/login" class="navbar-button">Login</a>

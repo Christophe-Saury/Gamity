@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>Game Hosting Request</title>
-    <link rel="stylesheet" href="/css/GameHostingPageStyle.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/css/ContactPageStyle.css">
 </head>
-
 <body>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-left">
+        <div class="home" ><a href="/Home" class="navbar-link">Home</a></div>
+        <div class="about">    <a href="/about" class="navbar-link">About</a></div>
+        <div class="ListOfGames" >  <a href="/ListOfGames" class="navbar-link">Games</a></div>
+        <div class="contact" >  <a href="/contact" class="navbar-link">Contact</a></div>
+        <div class="contact" >  <a href="/GameHostRequest" class="navbar-link">Host your game</a></div>
+    </div>
+    <div class="navbar-right">
+        <a href="/login" class="navbar-button">Login</a>
+    </div>
+</nav>
+
+<!-- Main Content -->
 <div class="container">
-    <h1>Game Hosting Request</h1>
-    <p>Fill out the form below to submit your game hosting request.</p>
-
-    <form action="submit_request.php" method="POST">
-        <label for="gameName">Game Name:</label>
-        <input type="text" id="gameName" name="gameName" required>
-
+    <h1>Fill the form to request to host your game</h1>
+    <p>Do you want your own game hosted on our GAMITY? We'd love to see your game!</p>
+    <form class="contact-form" action="mailto:christophesaury23@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
         <label for="developerName">Developer Name:</label>
         <input type="text" id="developerName" name="developerName" required>
 
         <label for="gameDescription">Game Description:</label>
         <textarea id="gameDescription" name="gameDescription" rows="5" required></textarea>
 
-        <label for="contactEmail">Contact Email:</label>
-        <input type="email" id="contactEmail" name="contactEmail" required>
+        <label for="gameCode">Iframe code of the game:</label>
+        <textarea id="gameCode" name="gameCode" rows="5" required></textarea>
 
-        <button type="submit">Submit Request</button>
+        <input type="submit" value="Send">
     </form>
 </div>
 
-<script></script>
 </body>
-
 </html>

@@ -48,6 +48,11 @@ public class UserController {
         return "ContactPage";
     }
 
+    @RequestMapping(value = "/contact", method = RequestMethod.POST)
+    public String contactPagePost() {
+        return "ContactPage";
+    }
+
     // Will probably be updated
     @RequestMapping(value = "/errorPage", method = RequestMethod.GET)
     public String errorPage(){
@@ -78,6 +83,10 @@ public class UserController {
     // might be updated
     @RequestMapping(value = "/GameHostRequest", method = RequestMethod.GET)
     public String gameHostingRequestPage() {
+        return "GameHostingRequestPage";
+    }
+    @RequestMapping(value = "/GameHostRequest", method = RequestMethod.POST)
+    public String gameHostingRequestPagePOST() {
         return "GameHostingRequestPage";
     }
 
