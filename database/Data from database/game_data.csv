@@ -1,12 +1,12 @@
-"game_id";"name";"code";"description";"rating";"category"
+"game_id";"name";"code";"description";"rating";"category";"image"
 1;"Chess";"<iframe style=""width: 100%; height: 550px; overflow: hidden;"" src=""https://playpager.com/embed/chess/index.html"" scrolling=""no""></iframe>";"Chess is a two-player board game of strategy and intellect. Players maneuver their pieces across a checkered board to capture the opponents
  king. It requires tactical thinking, planning, and foresight. The game is played with 16 pieces per player and involves unique movements 
- for each piece. Chess is renowned for its complexity and is enjoyed by people of all ages.";5;1
+ for each piece. Chess is renowned for its complexity and is enjoyed by people of all ages.";5;1;"/img/Chess.png"
 2;"Bubble shooter extreme";"<iframe 
  			    style=""width: 900px; height: 675px; overflow: hidden;""
  				src=""http://www.freeonlinegames.com/embed/144939""
  				scrolling=""no"">
- 				</iframe>";"Bubble Shooter Extreme is a WebGL/HTML5 version of popular Bubble Shooter game with great graphics. Shoot two or more connected bubbles of the same color to disappear them. The more bubbles you disappear in one shot the more score you get. Game is won after all bubbles exploded.";4;2
+ 				</iframe>";"Bubble Shooter Extreme is a WebGL/HTML5 version of popular Bubble Shooter game with great graphics. Shoot two or more connected bubbles of the same color to disappear them. The more bubbles you disappear in one shot the more score you get. Game is won after all bubbles exploded.";4;2;"/img/BubbleShooter.png"
 3;"Checkers";"<iframe
                     style=""width: 100%; height: 550px; overflow: hidden""
                     src=""https://playpager.com/embed/checkers/index.html""
@@ -15,14 +15,13 @@
             </iframe>";"Checkers is played by two persons who oppose each other across a board
             of 64 light and dark squares, the same as a chessboard. The 24 playing
             pieces are disk-shaped and of contrasting colours (whatever their
-            colours, they are identified as black and white).";4;1
+            colours, they are identified as black and white).";4;1;"/img/Checkers.png"
 4;"Reversi";"<iframe
                     style=""width: 100%; height: 550px; overflow: hidden""
                     src=""https://playpager.com/embed/reversi/index.html""
                     scrolling=""no""></iframe>";"Each piece played must be laid adjacent to an opponent's piece so that
             the opponent's piece or a row of opponent's pieces is flanked by the
-            new piece and another piece of the player's colour";4;1
-5;"Car Driving Simulator";" <iframe src=""http://www.freeonlinegames.com/embed/161586"" style=""width: 100%; height:550px; overflow:hidden"" scrolling=""no""></iframe>";"Play this Extreme Car Driving Simulator game to display power drift car with drag racing in new games to become real drift master. Drive as fast as you can and explore extreme roads and ramps to let your car perform amazing stunts. This is a 3D driving game with amazing drifting cars that shows your driving skills to control power drift cars in Extreme Car Driving Simulator";5;3
-6;"
-Real Shooting Fps Strike";"<iframe src=""http://www.freeonlinegames.com/embed/171307"" style=""width:100%; height:550px; overflow:hidden"" scrolling=""no""></iframe>";"Real Shooting Fps Strike is a well-made 3D gun battle survival game. Shoot the enemies pouring in from all directions and defeat them. Can you complete all levels and get all the weapons? Choose the gun you like and start fighting! I wish you success and have fun!";3;3
-7;"Goodgame Empire";"<iframe src=""http://www.freeonlinegames.com/embed/23467"" width=""830"" height=""630"" frameborder=""no"" scrolling=""no""></iframe>	";"Goodgame Empire is a great strategy MMO by Good-game Studios. Build your own castle, create a powerful army and fight epic player versus player battles on a dynamic world map. Crush your enemies, conquer land and rise to be the ruler of a mighty empire!";4;2
+            new piece and another piece of the player's colour";4;1;"/img/Reversi.png"
+5;"Driving Simulator";" <iframe src=""http://www.freeonlinegames.com/embed/161586"" style=""width: 100%; height:550px; overflow:hidden"" scrolling=""no""></iframe>";"Play this Extreme Car Driving Simulator game to display power drift car with drag racing in new games to become real drift master. Drive as fast as you can and explore extreme roads and ramps to let your car perform amazing stunts. This is a 3D driving game with amazing drifting cars that shows your driving skills to control power drift cars in Extreme Car Driving Simulator";5;3;"/img/DriftSimulator.png"
+6;"Shooting Fps striker";"<iframe src=""http://www.freeonlinegames.com/embed/171307"" style=""width:100%; height:550px; overflow:hidden"" scrolling=""no""></iframe>";"Real Shooting Fps Strike is a well-made 3D gun battle survival game. Shoot the enemies pouring in from all directions and defeat them. Can you complete all levels and get all the weapons? Choose the gun you like and start fighting! I wish you success and have fun!";3;3;"/img/FPS.jpg"
+7;"Goodgame Empire";"<iframe src=""http://www.freeonlinegames.com/embed/23467"" width=""830"" height=""630"" frameborder=""no"" scrolling=""no""></iframe>	";"Goodgame Empire is a great strategy MMO by Good-game Studios. Build your own castle, create a powerful army and fight epic player versus player battles on a dynamic world map. Crush your enemies, conquer land and rise to be the ruler of a mighty empire!";4;2;"../img/GoodGameEmpire.png"
